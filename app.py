@@ -4,6 +4,9 @@ import json
 from PIL import Image
 import io
 
+# ========== API CONFIGURATION ==========
+API_URL = "https://agri-ai-api.onrender.com" 
+
 # ========== MULTILINGUAL UI TEXT ==========
 UI_TEXTS = {
     "English": {
@@ -497,7 +500,7 @@ with tab1:
         with st.spinner(ui["analyzing"]):
             try:
                 response = requests.post(
-                    "http://localhost:8000/predict-crop",
+                    f"{API_URL}/predict-crop",
                     params={
                         "N": N, "P": P, "K": K,
                         "temperature": temperature,
@@ -589,7 +592,7 @@ with tab2:
                             # Send to API
                             files = {"file": ("image.jpg", img_bytes.getvalue(), "image/jpeg")}
                             response = requests.post(
-                                "http://localhost:8000/predict-disease",
+                                f"{API_URL}/predict-disease",
                                 params={"language": selected_lang.lower()},
                                 files=files
                             )
@@ -702,4 +705,5 @@ st.markdown(f"""
 <div class="footer">
     <p>{ui['footer']}</p>
 </div>
+
 """, unsafe_allow_html=True)
