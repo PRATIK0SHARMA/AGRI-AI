@@ -326,7 +326,7 @@ UI_TEXTS = {
 # ========== PAGE CONFIG ==========
 st.set_page_config(
     page_title="Agri AI Assistant",
-    page_icon="C:\\Users\\sharm\\Downloads\\Screenshot_2026-01-30_222240-removebg-preview.png",
+    #page_icon="C:\\Users\\sharm\\Downloads\\Screenshot_2026-01-30_222240-removebg-preview.png",
     layout="wide"
 )
 
@@ -453,7 +453,7 @@ def process_image_for_api(image):
 # ========== SIDEBAR ==========
 
 with st.sidebar:
-    st.image("C:\\Users\\sharm\\Downloads\\Screenshot_2026-01-30_222240-removebg-preview.png", width=100)
+    #st.image("C:\\Users\\sharm\\Downloads\\Screenshot_2026-01-30_222240-removebg-preview.png", width=100)
     
     # Language selector
     st.markdown(f"###  {UI_TEXTS['English']['language']}")
@@ -707,3 +707,4 @@ st.markdown(f"""
 </div>
 
 """, unsafe_allow_html=True)
+
